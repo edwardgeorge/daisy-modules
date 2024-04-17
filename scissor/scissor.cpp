@@ -14,7 +14,7 @@ void configure_osc() {
 	float fine = fmap(hw.GetAdcValue(CV_2), 0, 10);
 	float cvmod = fmap(hw.GetAdcValue(CV_5), 0, 60); // 1v/8
 	float midi_nn = fclamp(coarse + fine + cvmod, 0.f, 127.f);
-    float freq  = mtof(midi_nn);
+	float freq = mtof(midi_nn);
 	osc.SetFreq(freq);
 	float pw_knob = fmap(hw.GetAdcValue(CV_3), 0.1, 0.9);
 	float pw_mod = fmap(hw.GetAdcValue(CV_6), -0.9, 0.9);
